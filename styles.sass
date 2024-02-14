@@ -1,0 +1,211 @@
+$mobile-breakpoint: 960px
+$background: #f5f5f5
+$brown: #C7AEA1
+$darkbrown: #aa8571
+$orange: #EFB82B
+  
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cedarville+Cursive&display=swap')
+
+$serif: 'Averia Serif Libre', serif
+$cursive: 'Cedarville Cursive', cursive
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.hide
+  display: none
+
+body
+  background: lighten($brown, 10%)
+  overflow-x: hidden
+  
+.mobile-helper
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: $background
+  color: black
+  display: flex 
+  align-items: center
+  justify-content: center
+  font-size: 24px
+  z-index: 9999
+  font-family: $serif
+
+  @media (max-width: $mobile-breakpoint)
+    display: none
+
+@keyframes title-in
+  to
+    stroke-dashoffset: 0
+
+@keyframes title-wrapper-in
+  to
+    height: 30svh
+
+@keyframes hero-in
+  to
+    opacity: 1
+
+.hero-img
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+  z-index: -1
+  opacity: 0
+
+  animation: hero-in 5s ease-in-out forwards
+  animation-delay: 5s
+
+.hero
+  z-index: 1
+  min-height: 115svh
+  background: transparent
+  color: black
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+
+  .title-wrapper
+    height: 100svh
+    width: 100%
+    background: linear-gradient(180deg, $darkbrown 0%, $brown 40%, transparent 100%)
+    display: flex
+    align-items: center
+    justify-content: center
+    animation: title-wrapper-in 4s ease-in-out forwards
+    animation-delay: 5s
+
+    svg
+      width: 70svw
+
+      path
+        stroke-dasharray: 501
+        stroke-dashoffset: 501
+        animation: title-in 10s ease-out forwards
+        animation-delay: 2s
+
+
+  .subtitle
+    width: 100%
+    height: 20svh
+    display: flex
+    align-items: center
+    justify-content: center
+    background: linear-gradient(180deg, transparent 0%, $background 50%)
+
+    h2
+      font-family: $cursive
+      font-size: 4rem
+      font-weight: 300
+      text-align: center
+
+
+.poem
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background: $background
+  font-family: $serif
+
+  .poem-title
+    width: 100%
+    padding: 2rem
+
+    h1
+      font-size: 2rem
+      font-weight: 700
+    h2
+      font-size: 1.2rem
+      font-weight: 700
+  
+  .poem-text
+    width: 100%
+
+    .poem-slide
+      font-size: 1.4rem
+      font-weight: 400
+      text-align: right
+      min-height: 50svh
+
+      p
+        line-height: 2.5rem
+        padding: 1rem
+  
+  .poem-controls
+    width: 100%
+    height: 10svh
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    div
+      width: 50px
+      height: 50px
+      background: $orange  
+      margin: 0 2rem
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      box-shadow: -4px 4px 0px #000000
+      
+      svg
+        height: 45%
+
+.memorial
+  width: 100%
+  background: $background
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+
+  img
+    margin-top: 3rem
+    width: 90%
+    height: 90%
+    object-fit: cover
+  
+  .name
+    h1
+      margin-top: 1rem
+      font-size: 2rem
+      font-weight: 400
+      text-align: center
+      font-family: $serif
+    h2
+      font-size: 1.2rem
+      text-align: center
+      font-weight: 300
+      font-family: $cursive
+
+.footer
+  background: $background
+  width: 100%
+  display: flex
+  flex-direction: column
+  
+  p
+    width: 100%
+    text-align: left
+    margin-top: 3rem
+    font-family: $cursive
+    padding-left: 1rem
+    font-size: 1rem
+    
+  img
+    width: 100%

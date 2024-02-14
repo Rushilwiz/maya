@@ -1,0 +1,6 @@
+# Ignore compiled Sass files
+*.css
+*.css.map
+
+# Ignore Sass cache files
+.sass-cache/
